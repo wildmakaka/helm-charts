@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: minikube-wordpress-app-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       component: wordpress-app
@@ -16,4 +16,4 @@ spec:
         - name: wordpress-app
           image: wordpress
           ports:
-            - containerPort: 8080
+            - containerPort: 80
