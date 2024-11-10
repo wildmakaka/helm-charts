@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minikube-wordpress-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: wordpress-app
+  template:
+    metadata:
+      labels:
+        component: wordpress-app
+    spec:
+      containers:
+        - name: wordpress-app
+          image: wordpress
+          ports:
+            - containerPort: 8080
